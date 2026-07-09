@@ -1,0 +1,23 @@
+# Build output
+bin/
+obj/
+helper/**/bin/
+helper/**/obj/
+
+# Local generated native-host files
+dist/host/
+dist/releases/
+dist/*.json
+dist/*.txt
+
+# Packaged AMO uploads are generated artifacts.
+dist/amo/build/
+
+# Editor and OS noise
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
+*.log

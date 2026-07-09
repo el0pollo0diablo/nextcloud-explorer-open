@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "name": "Nextcloud Explorer Open",
+  "version": "0.2.0",
+  "description": "Open the matching Nextcloud WebDAV folder in Windows Explorer.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nextcloud-explorer-open@covasala.org",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "browsingActivity",
+          "websiteActivity",
+          "websiteContent"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "menus",
+    "nativeMessaging",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/index.php/apps/files/*",
+        "*://*/*/index.php/apps/files/*",
+        "*://*/apps/files/*",
+        "*://*/*/apps/files/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  }
+}

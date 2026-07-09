@@ -1,0 +1,43 @@
+body {
+  font: menu;
+  margin: 0;
+  padding: 24px;
+}
+
+main {
+  max-width: 760px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+input {
+  box-sizing: border-box;
+  display: block;
+  font: inherit;
+  padding: 8px;
+  width: 100%;
+}
+
+p {
+  color: #555;
+  line-height: 1.4;
+}
+
+button {
+  font: inherit;
+  margin-top: 12px;
+  padding: 8px 14px;
+}
+
+#status {
+  margin-left: 12px;
+}

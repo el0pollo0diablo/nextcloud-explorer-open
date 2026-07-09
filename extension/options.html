@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>Nextcloud Explorer Open</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <h1>Nextcloud Explorer Open</h1>
+
+      <label for="webdavBaseUrl">Nextcloud-WebDAV-Basis-URL</label>
+      <input id="webdavBaseUrl" type="url" spellcheck="false" placeholder="https://cloud.example.com/remote.php/dav/files/USERNAME/">
+
+      <p>
+        Beispiel:
+        <code>https://cloud.example.com/remote.php/dav/files/USERNAME/</code>
+      </p>
+
+      <button id="save" type="button">Speichern</button>
+      <span id="status" role="status"></span>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
