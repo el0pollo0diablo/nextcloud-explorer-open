@@ -1,13 +1,12 @@
 # Windows Helper Installation
 
-The Firefox add-on needs a local Windows native messaging host. Copy this block into PowerShell and replace the placeholders first:
+The Firefox add-on needs a local Windows native messaging host. Copy this block into PowerShell and replace the WebDAV placeholders first:
 
-- `HELPER_ZIP_URL`: URL where `nextcloud-explorer-open-native-host-win-x64.zip` is hosted.
 - `WEBDAV_BASE`: your Nextcloud WebDAV base URL, for example `https://cloud.example.com/remote.php/dav/files/USERNAME/`.
 - `NEXTCLOUD_USER`: your Nextcloud username.
 
 ```powershell
-$HELPER_ZIP_URL = "https://example.com/nextcloud-explorer-open-native-host-win-x64.zip"
+$HELPER_ZIP_URL = "https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip"
 $WEBDAV_BASE = "https://cloud.example.com/remote.php/dav/files/USERNAME/"
 $NEXTCLOUD_USER = "USERNAME"
 

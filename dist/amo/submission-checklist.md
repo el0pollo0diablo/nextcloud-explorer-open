@@ -45,6 +45,6 @@ The Firefox extension does not install the Windows native messaging host. The lo
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-firefox-host.ps1
 ```
 
-For public users, provide the prebuilt native host package:
+For public users, provide the prebuilt native host package from the GitHub release:
 
-`dist/releases/nextcloud-explorer-open-native-host-win-x64.zip`
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip`

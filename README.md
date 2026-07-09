@@ -34,10 +34,10 @@ net use \\cloud.example.com@SSL\DavWWWRoot\remote.php\dav\files\USERNAME /user:U
 
 ## Copy-Paste Windows Helper Setup
 
-Host `dist/releases/nextcloud-explorer-open-native-host-win-x64.zip` somewhere users can download it, then provide a PowerShell block like this. Users must replace the ZIP URL, WebDAV URL, and username.
+Use the published helper ZIP from the GitHub release. Users must replace the WebDAV URL and username.
 
 ```powershell
-$HELPER_ZIP_URL = "https://example.com/nextcloud-explorer-open-native-host-win-x64.zip"
+$HELPER_ZIP_URL = "https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip"
 $WEBDAV_BASE = "https://cloud.example.com/remote.php/dav/files/USERNAME/"
 $NEXTCLOUD_USER = "USERNAME"
 

@@ -8,7 +8,7 @@ The native host source is in `helper/NextcloudExplorerHost`. The Firefox package
 
 Expected setup for testing:
 
-1. Install the native messaging host. For source checkout testing, run `scripts/install-firefox-host.ps1` from the project root on Windows with .NET 8 SDK available. For end-user testing, use `dist/releases/nextcloud-explorer-open-native-host-win-x64.zip` and run its included `install-firefox-host.ps1`.
+1. Install the native messaging host. For source checkout testing, run `scripts/install-firefox-host.ps1` from the project root on Windows with .NET 8 SDK available. For end-user testing, use the helper ZIP from `https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip` and run its included `install-firefox-host.ps1`.
 2. Load or install the extension.
 3. In extension options, set a Nextcloud WebDAV base URL such as `https://cloud.example.com/remote.php/dav/files/USERNAME/`.
 4. Configure Windows WebDAV credentials for the same Nextcloud account.

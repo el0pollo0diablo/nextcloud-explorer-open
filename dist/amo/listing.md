@@ -10,7 +10,10 @@ Nextcloud Explorer Open adds an "Open folder in Explorer" action to the Nextclou
 
 This add-on requires a separate local native messaging host on Windows. Without the helper and Windows WebDAV credentials, the browser extension cannot open local Explorer windows.
 
-The Windows helper setup is PowerShell-based: download the native host ZIP, extract it to `%LOCALAPPDATA%\NextcloudExplorerOpen`, run the included install script, and configure Windows WebDAV credentials with a Nextcloud app password.
+The Windows helper setup is PowerShell-based: download the native host ZIP from the GitHub release, extract it to `%LOCALAPPDATA%\NextcloudExplorerOpen`, run the included install script, and configure Windows WebDAV credentials with a Nextcloud app password.
+
+Windows helper download:
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip`
 
 The add-on does not install anything on the Nextcloud server and does not modify server-side data. The only server access is Windows WebDAV access initiated locally by Windows Explorer.
 
