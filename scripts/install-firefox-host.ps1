@@ -5,8 +5,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$hostName = "org.covasala.nextcloud_explorer"
-$extensionId = "nextcloud-explorer-open@covasala.org"
+$hostName = "io.github.el0pollo0diablo.nextcloud_explorer_open"
+$extensionId = "@el0pollo0diablo-nextcloud-explorer-open"
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $projectPath = Join-Path $repoRoot "helper\NextcloudExplorerHost\NextcloudExplorerHost.csproj"
 $publishDir = Join-Path $repoRoot "dist\host"

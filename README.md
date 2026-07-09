@@ -37,7 +37,7 @@ net use \\cloud.example.com@SSL\DavWWWRoot\remote.php\dav\files\USERNAME /user:U
 Use the published helper ZIP from the GitHub release. Users must replace the WebDAV URL and username.
 
 ```powershell
-$HELPER_ZIP_URL = "https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip"
+$HELPER_ZIP_URL = "https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.1/nextcloud-explorer-open-native-host-win-x64.zip"
 $WEBDAV_BASE = "https://cloud.example.com/remote.php/dav/files/USERNAME/"
 $NEXTCLOUD_USER = "USERNAME"
 
@@ -83,19 +83,19 @@ https://addons.mozilla.org/en-US/firefox/addon/nextcloud-explorer-open/
 Firefox extension ID (internal ID, not an email address):
 
 ```text
-nextcloud-explorer-open@covasala.org
+@el0pollo0diablo-nextcloud-explorer-open
 ```
 
 Native messaging host:
 
 ```text
-org.covasala.nextcloud_explorer
+io.github.el0pollo0diablo.nextcloud_explorer_open
 ```
 
 The host manifest is registered under:
 
 ```text
-HKCU\Software\Mozilla\NativeMessagingHosts\org.covasala.nextcloud_explorer
+HKCU\Software\Mozilla\NativeMessagingHosts\io.github.el0pollo0diablo.nextcloud_explorer_open
 ```
 
 ## Build And Validate

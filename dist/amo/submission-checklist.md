@@ -2,7 +2,7 @@
 
 Package to upload:
 
-`dist/amo/build/nextcloud_explorer_open-0.2.0.zip`
+`dist/amo/build/nextcloud_explorer_open-0.2.1.zip`
 
 Recommended submission type:
 
@@ -47,4 +47,4 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-firefo
 
 For public users, provide the prebuilt native host package from the GitHub release:
 
-`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip`
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.1/nextcloud-explorer-open-native-host-win-x64.zip`

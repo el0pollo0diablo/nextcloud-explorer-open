@@ -1,6 +1,6 @@
 "use strict";
 
-const HOST_NAME = "org.covasala.nextcloud_explorer";
+const HOST_NAME = "io.github.el0pollo0diablo.nextcloud_explorer_open";
 const MENU_ID = "nextcloud-explorer-open-folder";
 const MENU_TITLE = "Ordner im Explorer \u00f6ffnen";
 

@@ -6,7 +6,7 @@ The Firefox add-on needs a local Windows native messaging host. Copy this block 
 - `NEXTCLOUD_USER`: your Nextcloud username.
 
 ```powershell
-$HELPER_ZIP_URL = "https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip"
+$HELPER_ZIP_URL = "https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.1/nextcloud-explorer-open-native-host-win-x64.zip"
 $WEBDAV_BASE = "https://cloud.example.com/remote.php/dav/files/USERNAME/"
 $NEXTCLOUD_USER = "USERNAME"
 

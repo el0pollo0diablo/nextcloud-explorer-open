@@ -4,8 +4,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$hostName = "org.covasala.nextcloud_explorer"
-$extensionId = "nextcloud-explorer-open@covasala.org"
+$hostName = "io.github.el0pollo0diablo.nextcloud_explorer_open"
+$extensionId = "@el0pollo0diablo-nextcloud-explorer-open"
 $exePath = Join-Path $HostDirectory "NextcloudExplorerHost.exe"
 $manifestPath = Join-Path $PSScriptRoot "$hostName.json"
 $registryKey = "HKCU\Software\Mozilla\NativeMessagingHosts\$hostName"
@@ -23,6 +23,7 @@ $manifest = [ordered]@{
 }
 
 $manifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $manifestPath -Encoding UTF8
+
 & reg.exe add $registryKey /ve /t REG_SZ /d $manifestPath /f | Out-Null
 
 Write-Host "Native-Messaging-Host installiert."

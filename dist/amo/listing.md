@@ -13,7 +13,7 @@ This add-on requires a separate local native messaging host on Windows. Without 
 The Windows helper setup is PowerShell-based: download the native host ZIP from the GitHub release, extract it to `%LOCALAPPDATA%\NextcloudExplorerOpen`, run the included install script, and configure Windows WebDAV credentials with a Nextcloud app password.
 
 Windows helper download:
-`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip`
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.1/nextcloud-explorer-open-native-host-win-x64.zip`
 
 The add-on does not install anything on the Nextcloud server and does not modify server-side data. The only server access is Windows WebDAV access initiated locally by Windows Explorer.
 
@@ -26,11 +26,11 @@ The content script is limited to Nextcloud Files URL patterns such as `/index.ph
 
 ## Native application
 
-Native messaging host name: `org.covasala.nextcloud_explorer`
+Native messaging host name: `io.github.el0pollo0diablo.nextcloud_explorer_open`
 
 AMO listing URL: `https://addons.mozilla.org/en-US/firefox/addon/nextcloud-explorer-open/`
 
-Firefox extension ID: `nextcloud-explorer-open@covasala.org`
+Firefox extension ID: `@el0pollo0diablo-nextcloud-explorer-open`
 
 The Firefox extension ID is an internal WebExtension identifier and is not an email address.
 

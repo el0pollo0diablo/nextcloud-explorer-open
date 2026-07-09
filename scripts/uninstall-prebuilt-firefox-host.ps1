@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$hostName = "org.covasala.nextcloud_explorer"
+$hostName = "io.github.el0pollo0diablo.nextcloud_explorer_open"
 $registryKey = "HKCU\Software\Mozilla\NativeMessagingHosts\$hostName"
 $manifestPath = Join-Path $PSScriptRoot "$hostName.json"
 

@@ -1,8 +1,8 @@
 # Reviewer Notes
 
-This extension depends on a local Windows native messaging host named `org.covasala.nextcloud_explorer`.
+This extension depends on a local Windows native messaging host named `io.github.el0pollo0diablo.nextcloud_explorer_open`.
 
-Firefox extension ID: `nextcloud-explorer-open@covasala.org`
+Firefox extension ID: `@el0pollo0diablo-nextcloud-explorer-open`
 
 This is the internal WebExtension ID used by Firefox native messaging. It is not an email address.
 
@@ -10,7 +10,7 @@ The native host source is in `helper/NextcloudExplorerHost`. The Firefox package
 
 Expected setup for testing:
 
-1. Install the native messaging host. For source checkout testing, run `scripts/install-firefox-host.ps1` from the project root on Windows with .NET 8 SDK available. For end-user testing, use the helper ZIP from `https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.0/nextcloud-explorer-open-native-host-win-x64.zip` and run its included `install-firefox-host.ps1`.
+1. Install the native messaging host. For source checkout testing, run `scripts/install-firefox-host.ps1` from the project root on Windows with .NET 8 SDK available. For end-user testing, use the helper ZIP from `https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.1/nextcloud-explorer-open-native-host-win-x64.zip` and run its included `install-firefox-host.ps1`.
 2. Load or install the extension.
 3. In extension options, set a Nextcloud WebDAV base URL such as `https://cloud.example.com/remote.php/dav/files/USERNAME/`.
 4. Configure Windows WebDAV credentials for the same Nextcloud account.

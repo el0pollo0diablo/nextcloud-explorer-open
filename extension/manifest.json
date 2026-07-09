@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
   "name": "Nextcloud Explorer Open",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Open the matching Nextcloud WebDAV folder in Windows Explorer.",
   "browser_specific_settings": {
     "gecko": {
-      "id": "nextcloud-explorer-open@covasala.org",
+      "id": "@el0pollo0diablo-nextcloud-explorer-open",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
         "required": [
