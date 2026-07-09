@@ -5,7 +5,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $hostName = "io.github.el0pollo0diablo.nextcloud_explorer_open"
-$extensionId = "@el0pollo0diablo-nextcloud-explorer-open"
+$extensionId = "nextcloud-explorer-open@covasala.org"
 $exePath = Join-Path $HostDirectory "NextcloudExplorerHost.exe"
 $manifestPath = Join-Path $PSScriptRoot "$hostName.json"
 $registryKey = "HKCU\Software\Mozilla\NativeMessagingHosts\$hostName"
