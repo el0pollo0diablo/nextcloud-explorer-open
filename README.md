@@ -74,7 +74,13 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-firefo
 
 ## Firefox Add-on
 
-Firefox extension ID:
+AMO listing URL:
+
+```text
+https://addons.mozilla.org/en-US/firefox/addon/nextcloud-explorer-open/
+```
+
+Firefox extension ID (internal ID, not an email address):
 
 ```text
 nextcloud-explorer-open@covasala.org

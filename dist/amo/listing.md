@@ -28,7 +28,11 @@ The content script is limited to Nextcloud Files URL patterns such as `/index.ph
 
 Native messaging host name: `org.covasala.nextcloud_explorer`
 
+AMO listing URL: `https://addons.mozilla.org/en-US/firefox/addon/nextcloud-explorer-open/`
+
 Firefox extension ID: `nextcloud-explorer-open@covasala.org`
+
+The Firefox extension ID is an internal WebExtension identifier and is not an email address.
 
 The helper is a local Windows program. It receives only the configured WebDAV base URL, current page URL, selected item path, item type, and folder path. It opens the corresponding folder locally with Windows Explorer.
 

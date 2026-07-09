@@ -4,6 +4,8 @@ This extension depends on a local Windows native messaging host named `org.covas
 
 Firefox extension ID: `nextcloud-explorer-open@covasala.org`
 
+This is the internal WebExtension ID used by Firefox native messaging. It is not an email address.
+
 The native host source is in `helper/NextcloudExplorerHost`. The Firefox package itself contains only the WebExtension files from the `extension` directory.
 
 Expected setup for testing:
