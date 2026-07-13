@@ -9,16 +9,37 @@
     <main>
       <h1>Nextcloud Explorer Open</h1>
 
-      <label for="webdavBaseUrl">Nextcloud-WebDAV-Basis-URL</label>
-      <input id="webdavBaseUrl" type="url" spellcheck="false" placeholder="https://cloud.example.com/remote.php/dav/files/USERNAME/">
+      <section aria-labelledby="connectionTitle">
+        <h2 id="connectionTitle">Windows-Verbindung</h2>
+        <p id="status" role="status">Status wird geprueft...</p>
 
-      <p>
-        Beispiel:
-        <code>https://cloud.example.com/remote.php/dav/files/USERNAME/</code>
-      </p>
+        <dl id="details" hidden>
+          <div>
+            <dt>Nextcloud</dt>
+            <dd id="server">-</dd>
+          </div>
+          <div>
+            <dt>Benutzer</dt>
+            <dd id="username">-</dd>
+          </div>
+          <div>
+            <dt>Windows-WebClient</dt>
+            <dd id="service">-</dd>
+          </div>
+        </dl>
 
-      <button id="save" type="button">Speichern</button>
-      <span id="status" role="status"></span>
+        <div class="actions">
+          <button id="configure" type="button">Windows-Einrichtung oeffnen</button>
+          <button id="refresh" type="button">Status aktualisieren</button>
+        </div>
+
+        <a
+          id="installer"
+          href="https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.3.0/nextcloud-explorer-open-setup-0.3.0.exe"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden>Windows-Installer herunterladen</a>
+      </section>
     </main>
 
     <script src="options.js"></script>

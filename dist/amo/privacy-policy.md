@@ -1,17 +1,16 @@
 # Privacy Policy
 
-Nextcloud Explorer Open does not sell, remotely transfer, or remotely store user data.
+Nextcloud Explorer Open does not sell, remotely collect, remotely store, or transfer user data to the developer or third parties.
 
-The extension stores one setting locally in Firefox: the Nextcloud WebDAV base URL entered by the user.
+When the user explicitly selects "Open folder in Explorer", the Firefox extension sends the following information to the native messaging host installed locally on the same Windows computer:
 
-When the user selects "Open folder in Explorer", the extension sends the following data to the locally installed native messaging host on the same computer:
-
-- configured WebDAV base URL
 - current Nextcloud page URL
 - selected item path
 - selected item type
 - folder path to open
 
-This local transfer is required for the add-on's core feature. The data is used only to construct a local Windows WebDAV path and open it in Windows Explorer. The extension does not send this data to the extension developer or to any third-party service.
+The local helper uses this information only to validate the configured Nextcloud site, construct the matching Windows WebDAV path, and open it in Windows Explorer.
 
-Windows Explorer may access the user's Nextcloud server through WebDAV using credentials configured in Windows. That access is handled by Windows and the user's Nextcloud server.
+The Nextcloud server address and username are stored in a local configuration file under the current Windows user's profile. The dedicated Nextcloud app password is stored only in Windows Credential Manager. It is not stored in Firefox, in the configuration file, in command-line arguments, or in logs.
+
+Windows accesses the user's configured Nextcloud server through HTTPS WebDAV. The helper rejects unencrypted HTTP server addresses and does not contact a developer-controlled server.

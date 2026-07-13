@@ -2,49 +2,26 @@
 
 Package to upload:
 
-`dist/amo/build/nextcloud_explorer_open-0.2.2.zip`
+`dist/amo/build/nextcloud_explorer_open-0.3.0.zip`
 
-Recommended submission type:
+Submission type:
 
 Listed / On this site.
 
-Use these prepared texts:
+Prepared text:
 
 - Listing: `dist/amo/listing.md`
 - Privacy policy: `dist/amo/privacy-policy.md`
 - Reviewer notes: `dist/amo/reviewer-notes.md`
+- Release notes: `dist/amo/release-notes-v0.3.0.md`
 
-Validation:
+Validation target:
 
-- `web-ext lint`: 0 errors, 0 warnings
+- `web-ext lint`: 0 errors
+- helper self-test: passed
+- installer build: passed
+- verify both release artifacts against `dist/releases/SHA256SUMS.txt`
 
-If you want an unlisted test build from the command line instead of uploading manually:
+The single Android compatibility warning from `web-ext lint` is expected because the add-on deliberately omits `gecko_android` while retaining Firefox 140 desktop support.
 
-1. Open the AMO Developer Hub.
-2. Create API credentials.
-3. Set environment variables:
-
-```powershell
-$env:AMO_JWT_ISSUER = "your-api-key"
-$env:AMO_JWT_SECRET = "your-api-secret"
-```
-
-4. Run:
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\dist\amo\submit-unlisted.ps1
-```
-
-The signed `.xpi` will be written to `dist/amo/signed`.
-
-Important:
-
-The Firefox extension does not install the Windows native messaging host. The local helper still has to be installed with:
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-firefox-host.ps1
-```
-
-For public users, provide the prebuilt native host package from the GitHub release:
-
-`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.2/nextcloud-explorer-open-native-host-win-x64.zip`
+The Windows native helper remains a separate, explicit installation. The WebExtension does not download or execute it.

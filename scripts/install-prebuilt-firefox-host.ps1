@@ -29,6 +29,5 @@ $manifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $manifestPath -En
 Write-Host "Native-Messaging-Host installiert."
 Write-Host "Host-Manifest: $manifestPath"
 Write-Host "Registry-Key:  $registryKey"
-Write-Host ""
-Write-Host "Windows-WebDAV muss eingerichtet sein, z. B.:"
-Write-Host "net use \\cloud.example.com@SSL\DavWWWRoot\remote.php\dav\files\USERNAME /user:USERNAME * /persistent:yes"
+
+& $exePath --configure

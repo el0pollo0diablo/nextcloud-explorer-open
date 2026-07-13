@@ -59,5 +59,5 @@ $manifest | ConvertTo-Json -Depth 4 | Set-Content -Path $manifestPath -Encoding 
 Write-Host "Native-Messaging-Host installiert."
 Write-Host "Host-Manifest: $manifestPath"
 Write-Host "Registry-Key:  $registryKey"
-Write-Host ""
-Write-Host "Naechster Schritt: Firefox -> about:debugging -> Diese Firefox-Installation -> Temporaeres Add-on laden -> extension/manifest.json"
+
+& $exePath --configure

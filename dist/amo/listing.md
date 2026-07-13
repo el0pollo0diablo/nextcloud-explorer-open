@@ -2,42 +2,32 @@
 
 ## Summary
 
-Open the Windows Explorer folder that corresponds to the selected item in the Nextcloud Files web interface.
+Open the Windows Explorer folder that corresponds to the selected item in Nextcloud Files.
 
 ## Description
 
-Nextcloud Explorer Open adds an "Open folder in Explorer" action to the Nextcloud Files action menu. When the user chooses the action, the extension detects the current Nextcloud folder path and sends it to a locally installed native messaging host. The native helper converts the configured WebDAV base URL into a Windows WebDAV UNC path and opens it with Windows Explorer.
+Nextcloud Explorer Open adds an "Open folder in Explorer" action to the Nextcloud Files menu. When the user selects it, the extension detects the current folder and asks a locally installed Windows helper to open the corresponding WebDAV location in Windows Explorer.
 
-This add-on requires a separate local native messaging host on Windows. Without the helper and Windows WebDAV credentials, the browser extension cannot open local Explorer windows.
+Version 0.3 uses a guided Windows installer. Users install the Firefox add-on, run one setup program, and enter their Nextcloud HTTPS address, username, and a dedicated app password once. PowerShell commands, ZIP extraction, execution-policy changes, drive mappings, and manual `net use` commands are no longer required.
 
-The Windows helper setup is PowerShell-based: download the native host ZIP from the GitHub release, extract it to `%LOCALAPPDATA%\NextcloudExplorerOpen`, run the included install script, and configure Windows WebDAV credentials with a Nextcloud app password.
+Windows installer:
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.3.0/nextcloud-explorer-open-setup-0.3.0.exe`
 
-Windows helper download:
-`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.2/nextcloud-explorer-open-native-host-win-x64.zip`
+The local helper stores the app password in Windows Credential Manager, validates that requests originate from the configured Nextcloud site, and reconnects Windows WebDAV automatically when needed.
 
-The add-on does not install anything on the Nextcloud server and does not modify server-side data. The only server access is Windows WebDAV access initiated locally by Windows Explorer.
+This add-on requires Windows and the separate local helper. It does not install anything on the Nextcloud server and does not modify server-side data.
 
 ## Permissions
 
-- `menus`: adds a browser context menu action.
-- `nativeMessaging`: talks to the local Windows helper that opens Explorer.
-- `storage`: stores the user-configured Nextcloud WebDAV base URL.
-The content script is limited to Nextcloud Files URL patterns such as `/index.php/apps/files/` and `/apps/files/`, regardless of the user's Nextcloud domain.
+- `menus`: adds the Firefox context-menu action.
+- `nativeMessaging`: communicates with the local Windows helper.
 
-## Native application
+The extension does not store the Nextcloud address or app password in Firefox.
+
+## Native Application
 
 Native messaging host name: `io.github.el0pollo0diablo.nextcloud_explorer_open`
 
-AMO listing URL: `https://addons.mozilla.org/en-US/firefox/addon/nextcloud-explorer-open/`
-
 Firefox extension ID: `nextcloud-explorer-open@covasala.org`
 
-The Firefox extension ID is the internal AMO/WebExtension identifier for this listing and is not an email address.
-
-The helper is a local Windows program. It receives only the configured WebDAV base URL, current page URL, selected item path, item type, and folder path. It opens the corresponding folder locally with Windows Explorer.
-
-Example WebDAV credential command:
-
-```cmd
-net use \\cloud.example.com@SSL\DavWWWRoot\remote.php\dav\files\USERNAME /user:USERNAME * /persistent:yes
-```
+The Firefox extension ID is the immutable internal identifier of this existing AMO listing. It is not an email address.

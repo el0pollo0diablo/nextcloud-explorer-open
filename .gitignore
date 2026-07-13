@@ -6,6 +6,7 @@ helper/**/obj/
 
 # Local generated native-host files
 dist/host/
+dist/installer/
 dist/releases/
 dist/*.json
 dist/*.txt

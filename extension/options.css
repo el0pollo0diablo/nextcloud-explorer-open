@@ -1,43 +1,79 @@
+:root {
+  color-scheme: light dark;
+}
+
 body {
+  background: Canvas;
+  color: CanvasText;
   font: menu;
   margin: 0;
   padding: 24px;
 }
 
 main {
-  max-width: 760px;
+  max-width: 720px;
 }
 
 h1 {
   font-size: 20px;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
 
-label {
-  display: block;
+h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+#status {
+  border-left: 4px solid GrayText;
+  margin: 0 0 18px;
+  padding: 8px 12px;
+}
+
+#status.success {
+  border-color: #16833d;
+}
+
+#status.warning {
+  border-color: #b56a00;
+}
+
+#status.error {
+  border-color: #b42318;
+}
+
+dl {
+  margin: 0 0 18px;
+}
+
+dl div {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 150px minmax(0, 1fr);
+  padding: 6px 0;
+}
+
+dt {
   font-weight: 600;
-  margin: 0 0 8px;
 }
 
-input {
-  box-sizing: border-box;
-  display: block;
-  font: inherit;
-  padding: 8px;
-  width: 100%;
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
 }
 
-p {
-  color: #555;
-  line-height: 1.4;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
 }
 
 button {
   font: inherit;
-  margin-top: 12px;
-  padding: 8px 14px;
+  padding: 7px 12px;
 }
 
-#status {
-  margin-left: 12px;
+a {
+  display: inline-block;
 }

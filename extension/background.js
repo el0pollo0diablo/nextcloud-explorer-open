@@ -78,24 +78,19 @@ browser.runtime.onMessage.addListener((message, sender) => {
 });
 
 async function openFolder(context, pageUrl) {
-  const settings = await browser.storage.local.get({
-    webdavBaseUrl: ""
-  });
-
-  const webdavBaseUrl = String(settings.webdavBaseUrl || "").trim();
-  if (!webdavBaseUrl) {
-    await browser.runtime.openOptionsPage();
-    throw new Error("Bitte zuerst die Nextcloud-WebDAV-Basis-URL in den Erweiterungsoptionen eintragen.");
-  }
-
-  return browser.runtime.sendNativeMessage(HOST_NAME, {
+  const response = await browser.runtime.sendNativeMessage(HOST_NAME, {
     action: "openFolder",
-    webdavBaseUrl,
     folderPath: context.folderPath,
     itemPath: context.itemPath,
     itemType: context.itemType,
     pageUrl
   });
+
+  if (response && response.code === "not_configured") {
+    await browser.runtime.openOptionsPage();
+  }
+
+  return response;
 }
 
 async function showPageError(tabId, error) {

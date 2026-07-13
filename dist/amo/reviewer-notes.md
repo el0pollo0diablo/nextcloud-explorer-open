@@ -1,21 +1,36 @@
 # Reviewer Notes
 
-This extension depends on a local Windows native messaging host named `io.github.el0pollo0diablo.nextcloud_explorer_open`.
+Version 0.3.0 keeps the existing AMO/WebExtension ID required for updates to this listing:
 
-Firefox extension ID: `nextcloud-explorer-open@covasala.org`
+`nextcloud-explorer-open@covasala.org`
 
-This is the internal AMO/WebExtension ID used by Firefox native messaging for this listing. It is not an email address.
+The Windows native messaging host is:
 
-The native host source is in `helper/NextcloudExplorerHost`. The Firefox package itself contains only the WebExtension files from the `extension` directory.
+`io.github.el0pollo0diablo.nextcloud_explorer_open`
 
-Expected setup for testing:
+Source code:
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open`
 
-1. Install the native messaging host. For source checkout testing, run `scripts/install-firefox-host.ps1` from the project root on Windows with .NET 8 SDK available. For end-user testing, use the helper ZIP from `https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.2.2/nextcloud-explorer-open-native-host-win-x64.zip` and run its included `install-firefox-host.ps1`.
-2. Load or install the extension.
-3. In extension options, set a Nextcloud WebDAV base URL such as `https://cloud.example.com/remote.php/dav/files/USERNAME/`.
-4. Configure Windows WebDAV credentials for the same Nextcloud account.
-5. Open Nextcloud Files in Firefox, open a file action menu, and choose `Ordner im Explorer oeffnen`.
+Windows installer for this version:
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.3.0/nextcloud-explorer-open-setup-0.3.0.exe`
 
-The extension is intended for Firefox on Windows. It does not contact any developer-controlled server. It only communicates with the local native messaging host through Firefox's native messaging API.
+The Firefox package contains only files from the `extension` directory. The native host source is in `helper/NextcloudExplorerHost`, and the installer definition is `installer/NextcloudExplorerOpen.iss`.
 
-The helper install process is explicit. The WebExtension does not download, install, or execute native code by itself.
+Build steps on Windows:
+
+1. Install .NET 8 SDK, Node.js/npm, and Inno Setup 6.
+2. Run `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-release.ps1 -Version 0.3.0`.
+3. The script runs the helper self-test and `web-ext lint`, then produces the exact AMO ZIP and Windows installer.
+
+Expected test flow:
+
+1. Run the Windows installer.
+2. Enter an HTTPS Nextcloud base address, username, and dedicated app password in the native configuration window.
+3. Install/load the Firefox extension.
+4. Open Nextcloud Files and choose `Ordner im Explorer oeffnen` from a file or folder action menu.
+
+Version 0.3.0 removes the Firefox `storage` permission. The server URL, username, and credential are managed by the local Windows helper. The app password is stored in Windows Credential Manager and is not sent to Firefox.
+
+The extension does not download, install, or execute native code. Native helper installation is an explicit user action. The extension does not contact developer-controlled services.
+
+The add-on intentionally omits `browser_specific_settings.gecko_android`, because the native Windows integration is not compatible with Firefox for Android. `web-ext lint` currently reports one Android-only minimum-version warning for `data_collection_permissions`; desktop validation has no errors.
