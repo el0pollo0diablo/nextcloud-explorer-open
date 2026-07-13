@@ -2,7 +2,7 @@
 
 Package to upload:
 
-`dist/amo/build/nextcloud_explorer_open-0.3.0.zip`
+`dist/amo/build/nextcloud_explorer_open-0.3.1.zip`
 
 Submission type:
 
@@ -13,11 +13,12 @@ Prepared text:
 - Listing: `dist/amo/listing.md`
 - Privacy policy: `dist/amo/privacy-policy.md`
 - Reviewer notes: `dist/amo/reviewer-notes.md`
-- Release notes: `dist/amo/release-notes-v0.3.0.md`
+- Release notes: `dist/amo/release-notes-v0.3.1.md`
 
 Validation target:
 
 - `web-ext lint`: 0 errors
+- extension message routing test: passed
 - helper self-test: passed
 - installer build: passed
 - verify both release artifacts against `dist/releases/SHA256SUMS.txt`

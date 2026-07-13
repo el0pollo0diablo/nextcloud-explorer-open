@@ -11,7 +11,7 @@ Nextcloud Explorer Open adds an "Open folder in Explorer" action to the Nextclou
 Version 0.3 uses a guided Windows installer. Users install the Firefox add-on, run one setup program, and enter their Nextcloud HTTPS address, username, and a dedicated app password once. PowerShell commands, ZIP extraction, execution-policy changes, drive mappings, and manual `net use` commands are no longer required.
 
 Windows installer:
-`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.3.0/nextcloud-explorer-open-setup-0.3.0.exe`
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.3.1/nextcloud-explorer-open-setup-0.3.1.exe`
 
 The local helper stores the app password in Windows Credential Manager, validates that requests originate from the configured Nextcloud site, and reconnects Windows WebDAV automatically when needed.
 

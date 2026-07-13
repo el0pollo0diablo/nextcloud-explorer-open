@@ -2,7 +2,7 @@
 
 Download and run:
 
-`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.3.0/nextcloud-explorer-open-setup-0.3.0.exe`
+`https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/download/v0.3.1/nextcloud-explorer-open-setup-0.3.1.exe`
 
 The setup installs the native messaging host for the current Windows user and opens the secure configuration window. Enter the Nextcloud HTTPS address, username, and a dedicated Nextcloud app password.
 

@@ -39,7 +39,12 @@ browser.menus.onClicked.addListener(async (info, tab) => {
       info
     });
 
-    const response = await openFolder(context, tab.url);
+    const pageUrl = resolvePageUrl(
+      context && context.pageUrl,
+      info.pageUrl,
+      tab.url
+    );
+    const response = await openFolder(context, pageUrl);
 
     if (!response || response.ok !== true) {
       throw new Error(response && response.error ? response.error : "Der lokale Helper konnte den Explorer nicht starten.");
@@ -55,8 +60,14 @@ browser.runtime.onMessage.addListener((message, sender) => {
   }
 
   const tab = sender && sender.tab ? sender.tab : {};
+  const context = message.context || {};
+  const pageUrl = resolvePageUrl(
+    message.pageUrl,
+    context.pageUrl,
+    tab.url
+  );
 
-  return openFolder(message.context || {}, tab.url || "").then((response) => {
+  return openFolder(context, pageUrl).then((response) => {
     if (!response || response.ok !== true) {
       return {
         ok: false,
@@ -76,6 +87,16 @@ browser.runtime.onMessage.addListener((message, sender) => {
     };
   });
 });
+
+function resolvePageUrl(...candidates) {
+  for (const candidate of candidates) {
+    if (typeof candidate === "string" && candidate.trim()) {
+      return candidate.trim();
+    }
+  }
+
+  return "";
+}
 
 async function openFolder(context, pageUrl) {
   const response = await browser.runtime.sendNativeMessage(HOST_NAME, {

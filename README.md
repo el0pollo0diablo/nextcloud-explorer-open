@@ -9,7 +9,7 @@ No server-side Nextcloud app is required.
 ## Install
 
 1. Install the Firefox extension from [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/nextcloud-explorer-open/).
-2. Download `nextcloud-explorer-open-setup-0.3.0.exe` from the [GitHub release](https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/tag/v0.3.0).
+2. Download `nextcloud-explorer-open-setup-0.3.1.exe` from the [GitHub release](https://github.com/el0pollo0diablo/nextcloud-explorer-open/releases/tag/v0.3.1).
 3. Run the setup and enter the Nextcloud HTTPS address, username, and a dedicated Nextcloud app password.
 4. Open Nextcloud Files in Firefox and choose `Ordner im Explorer oeffnen`.
 
@@ -70,7 +70,7 @@ winget install --id JRSoftware.InnoSetup --exact --source winget
 Build and validate all release artifacts:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-release.ps1 -Version 0.3.0
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-release.ps1 -Version 0.3.1
 ```
 
 The build runs the helper security self-test, `web-ext lint`, creates the AMO ZIP and installer, and writes SHA-256 checksums.

@@ -1,5 +1,5 @@
 param(
-    [string]$Version = "0.3.0"
+    [string]$Version = "0.3.1"
 )
 
 $ErrorActionPreference = "Stop"
@@ -49,6 +49,9 @@ foreach ($directory in @($publishDir, $releaseDir, $amoBuildDir)) {
     -p:IncludeNativeLibrariesForSelfExtract=true `
     -p:DebugType=None `
     -p:DebugSymbols=false `
+    -p:Version=$Version `
+    -p:FileVersion="$Version.0" `
+    -p:AssemblyVersion="$Version.0" `
     -o $publishDir
 
 if ($LASTEXITCODE -ne 0) {
@@ -68,6 +71,11 @@ $selfTest = Start-Process `
     -PassThru
 if ($selfTest.ExitCode -ne 0) {
     throw "Der Helper-Selbsttest ist fehlgeschlagen."
+}
+
+& node (Join-Path $repoRoot "tests\extension-message-routing.test.cjs")
+if ($LASTEXITCODE -ne 0) {
+    throw "Der Firefox-Nachrichtentest ist fehlgeschlagen."
 }
 
 & npx --yes web-ext@latest lint --source-dir (Join-Path $repoRoot "extension")

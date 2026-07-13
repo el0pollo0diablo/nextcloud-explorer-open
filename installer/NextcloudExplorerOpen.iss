@@ -1,6 +1,6 @@
 #define AppName "Nextcloud Explorer Open"
 #ifndef AppVersion
-  #define AppVersion "0.3.0"
+  #define AppVersion "0.3.1"
 #endif
 #define AppPublisher "el0pollo0diablo"
 #define AppUrl "https://github.com/el0pollo0diablo/nextcloud-explorer-open"

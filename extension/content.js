@@ -50,7 +50,10 @@ browser.runtime.onMessage.addListener((message) => {
   }
 
   if (message.type === "NC_EXPLORER_GET_CONTEXT") {
-    return Promise.resolve(extractContext(lastContextTarget, message.info || {}));
+    return Promise.resolve({
+      ...extractContext(lastContextTarget, message.info || {}),
+      pageUrl: window.location.href
+    });
   }
 
   if (message.type === "NC_EXPLORER_SHOW_ERROR") {
@@ -224,6 +227,7 @@ async function openFolderFromInjectedMenu(event, sourceButton) {
     const context = extractContext(lastMenuSourceTarget || lastContextTarget || event.target, {});
     const response = await browser.runtime.sendMessage({
       type: "NC_EXPLORER_OPEN_FOLDER",
+      pageUrl: window.location.href,
       context
     });
 
